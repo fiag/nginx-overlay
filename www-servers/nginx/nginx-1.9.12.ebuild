@@ -138,6 +138,12 @@ HTTP_LDAP_MODULE_P="nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 HTTP_LDAP_MODULE_URI="https://github.com/kvspb/nginx-auth-ldap/archive/${HTTP_LDAP_MODULE_PV}.tar.gz"
 HTTP_LDAP_MODULE_WD="${WORKDIR}/nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 
+# nginx-brotli-module (https://github.com/kvspb/nginx-auth-ldap, BSD-2)
+HTTP_BROTLI_MODULE_PV="2fc6f123b4ee4ac711c66e7831cb80749eec5bbe"
+HTTP_BROTLI_MODULE_P="nginx-brotli-${HTTP_BROTLI_MODULE_PV}"
+HTTP_BROTLI_MODULE_URI="https://github.com/google/ngx_brotli/archive/${HTTP_BROTLI_MODULE_PV}.tar.gz"
+HTTP_BROTLI_MODULE_WD="${WORKDIR}/nginx-brotli-${HTTP_BROTLI_MODULE_PV}"
+
 # We handle deps below ourselves
 SSL_DEPS_SKIP=1
 
@@ -165,7 +171,8 @@ SRC_URI="http://nginx.org/download/${P}.tar.gz
 	nginx_modules_http_sticky? ( ${HTTP_STICKY_MODULE_URI} -> ${HTTP_STICKY_MODULE_P}.tar.bz2 )
 	nginx_modules_http_mogilefs? ( ${HTTP_MOGILEFS_MODULE_URI} -> ${HTTP_MOGILEFS_MODULE_P}.tar.gz )
 	nginx_modules_http_memc? ( ${HTTP_MEMC_MODULE_URI} -> ${HTTP_MEMC_MODULE_P}.tar.gz )
-	nginx_modules_http_auth_ldap? ( ${HTTP_LDAP_MODULE_URI} -> ${HTTP_LDAP_MODULE_P}.tar.gz )"
+	nginx_modules_http_auth_ldap? ( ${HTTP_LDAP_MODULE_URI} -> ${HTTP_LDAP_MODULE_P}.tar.gz )
+	nginx_modules_http_brotli? ( ${HTTP_BROTLI_MODULE_URI} -> ${HTTP_BROTLI_MODULE_P}.tar.gz )"
 
 LICENSE="BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
 	nginx_modules_http_security? ( Apache-2.0 )
@@ -201,7 +208,8 @@ NGINX_MODULES_3RD="
 	http_ajp
 	http_mogilefs
 	http_memc
-	http_auth_ldap"
+	http_auth_ldap
+	http_brotli"
 
 IUSE="aio debug +http +http2 +http-cache ipv6 libatomic libressl luajit +pcre
 	pcre-jit rtmp selinux ssl threads userland_GNU vim-syntax"
