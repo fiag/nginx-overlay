@@ -274,7 +274,8 @@ CDEPEND="
 	nginx_modules_http_metrics? ( dev-libs/yajl )
 	nginx_modules_http_dav_ext? ( dev-libs/expat )
 	nginx_modules_http_security? ( >=dev-libs/libxml2-2.7.8 dev-libs/apr-util www-servers/apache )
-	nginx_modules_http_auth_ldap? ( net-nds/openldap[ssl?] )"
+	nginx_modules_http_auth_ldap? ( net-nds/openldap[ssl?] )
+	nginx_modules_http_brotli? ( dev-libs/libbrotli )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-nginx )
 	!www-servers/nginx:0"
