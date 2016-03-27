@@ -138,7 +138,7 @@ HTTP_LDAP_MODULE_P="nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 HTTP_LDAP_MODULE_URI="https://github.com/kvspb/nginx-auth-ldap/archive/${HTTP_LDAP_MODULE_PV}.tar.gz"
 HTTP_LDAP_MODULE_WD="${WORKDIR}/nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 
-# nginx-brotli-module (https://github.com/kvspb/nginx-auth-ldap, BSD-2)
+# nginx-brotli-module (https://github.com/google/ngx_brotli, AS-IS)
 HTTP_BROTLI_MODULE_PV="2fc6f123b4ee4ac711c66e7831cb80749eec5bbe"
 HTTP_BROTLI_MODULE_P="nginx-brotli-${HTTP_BROTLI_MODULE_PV}"
 HTTP_BROTLI_MODULE_URI="https://github.com/google/ngx_brotli/archive/${HTTP_BROTLI_MODULE_PV}.tar.gz"

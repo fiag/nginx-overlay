@@ -20,7 +20,7 @@ KEYWORDS="~amd64 ~x86"
 
 S="${WORKDIR}/${MY_P}"
 
-DEPEND="app-arch/brotli"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_unpack() {
