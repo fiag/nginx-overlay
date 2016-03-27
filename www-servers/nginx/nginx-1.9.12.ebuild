@@ -142,7 +142,7 @@ HTTP_LDAP_MODULE_WD="${WORKDIR}/nginx-auth-ldap-${HTTP_LDAP_MODULE_PV}"
 HTTP_BROTLI_MODULE_PV="2fc6f123b4ee4ac711c66e7831cb80749eec5bbe"
 HTTP_BROTLI_MODULE_P="nginx-brotli-${HTTP_BROTLI_MODULE_PV}"
 HTTP_BROTLI_MODULE_URI="https://github.com/google/ngx_brotli/archive/${HTTP_BROTLI_MODULE_PV}.tar.gz"
-HTTP_BROTLI_MODULE_WD="${WORKDIR}/nginx-brotli-${HTTP_BROTLI_MODULE_PV}"
+HTTP_BROTLI_MODULE_WD="${WORKDIR}/ngx_brotli-${HTTP_BROTLI_MODULE_PV}"
 
 # We handle deps below ourselves
 SSL_DEPS_SKIP=1
@@ -510,6 +510,11 @@ src_configure() {
 	if use nginx_modules_http_auth_ldap; then
 		http_enabled=1
 		myconf+=( --add-module=${HTTP_LDAP_MODULE_WD} )
+	fi
+
+	if use nginx_modules_http_brotli; then
+		http_enabled=1
+		myconf+=( --add-module=${HTTP_BROTLI_MODULE_WD} )
 	fi
 
 	if use http || use http-cache || use http2; then
